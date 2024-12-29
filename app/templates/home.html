@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to FlaskApp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .banner {
+            text-align: center;
+            background: linear-gradient(135deg, #00b6da, #0084a7);
+            color: white;
+            border-radius: 10px;
+            padding: 40px 20px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .banner h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .banner p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            background-color: #f7a600;
+            color: white;
+            font-weight: 700;
+            padding: 15px 30px;
+            font-size: 1em;
+            border: none;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #ff8c00;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .banner h1 {
+                font-size: 2em;
+            }
+
+            .banner p {
+                font-size: 1em;
+            }
+
+            .btn {
+                padding: 12px 25px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="banner">
+            <h1>Welcome to FlaskApp!</h1>
+            <p>Easily upload files, extract and summarize text, and manage your data efficiently.</p>
+            <p>Start your journey by registering or logging in below:</p>
+            <div class="btn-container">
+                <a href="{{ url_for('main.register') }}" class="btn">Register</a>
+                <a href="{{ url_for('main.login') }}" class="btn">Login</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
